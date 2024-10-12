@@ -1,0 +1,16 @@
+form div {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+form div.buttons {
+  display: flex;
+  justify-content: space-evenly !important;
+  margin: 5px;
+}
+
+form div.buttons:first-child {
+  color: white;
+  background-color: red;
+}

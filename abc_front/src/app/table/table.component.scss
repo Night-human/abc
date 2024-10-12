@@ -1,0 +1,73 @@
+@import "primeicons/primeicons.css";
+
+td, th {
+  border-bottom: 1px solid lightgray;
+  padding: 5px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#delete-button {
+  background-color: red;
+  padding: 4px;
+}
+
+#update-button {
+  background-color: skyblue;
+  padding: 4px;
+}
+
+i {
+  color: white;
+}
+
+.card {
+  position: absolute;
+  z-index: 4;
+  background-color: rgba($color: #0000000a, $alpha: 0.3);
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.card-body {
+  z-index: 5;
+  position: relative;
+  width: 20rem;
+  background-color: white;
+  top: 5rem;
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.card-body p {
+  text-align: center;
+}
+
+.card .card-body section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card .card-body section a {
+  padding: 5px;
+  width: 4rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.card #delete {
+  background-color: red;
+}
+
+.card #cancel {
+  background-color: gray;
+}
+

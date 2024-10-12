@@ -1,0 +1,55 @@
+<a id="update-button" (click)="showAddAlert()">Add user</a>
+<hr>
+<p-table [value]="users">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th pSortableColumn="name" style="width:20%">
+        Name <p-sortIcon field="name" />
+      </th>
+      <th pSortableColumn="lastName" style="width:20%">
+        Last Name <p-sortIcon field="lastName" />
+      </th>
+      <th>Phone</th>
+      <th>Position</th>
+      <th>Action</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user>
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.position }}</td>
+      <td>
+        <span class="actions">
+          <a id="delete-button" (click)="showDeleteAlert(user.id)"><i class="pi pi-trash"></i></a>
+          <a id="update-button" (click)="showUpdateAlert(user.id)"><i class="pi pi-pencil"></i></a>
+        </span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<div class="card" [hidden]="isDeleteHiden">
+  <div class="card-body">
+    <p>Do you really want to delete this item?</p>
+    <section>
+      <a id="delete" (click)="delete()">yes</a>
+      <a id="cancel" (click)="hide()">No</a>
+    </section>
+  </div>
+</div>
+
+<div class="card" [hidden]="isUpdateHiden">
+  <div class="card-body">
+    <app-update-form (hideCard)="hideUpdateAlert($event)" [id]="id"/>
+  </div>
+</div>
+
+<div class="card" [hidden]="isAddHiden">
+  <div class="card-body">
+    <app-add-form (hideAddCard)="hideAddAlert($event)"/>
+  </div>
+</div>

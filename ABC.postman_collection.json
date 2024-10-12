@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "36277baf-4c00-4c6a-9685-286253e6dd65",
+		"name": "ABC",
+		"description": "ABC project endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{path}}",
+					"host": [
+						"{{path}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{path}}/1",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by Name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{path}}?name=Alicia",
+					"host": [
+						"{{path}}"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Alicia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\":0,\r\n\t\"name\":\"Alicia\",\r\n\t\"lastName\":\"Perez\",\r\n\t\"phone\":\"9890987533\",\r\n\t\"position\":\"Engineer\"\r\n}"
+				},
+				"url": {
+					"raw": "{{path}}/10",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\":0,\r\n\t\"name\":\"Guadalupe\",\r\n\t\"lastName\":\"Orozco\",\r\n\t\"phone\":\"9895987533\",\r\n\t\"position\":\"RH\"\r\n}"
+				},
+				"url": {
+					"raw": "{{path}}",
+					"host": [
+						"{{path}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\":31,\r\n\t\"name\":\"Sergio\",\r\n\t\"lastName\":\"Lopez\",\r\n\t\"phone\":\"9895987533\",\r\n\t\"position\":\"Engineer\"\r\n}"
+				},
+				"url": {
+					"raw": "{{path}}/31",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"31"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d2012b03-b8fa-467b-93ab-b2f16d06abce",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d70507fc-948a-4da4-85db-40db79678ee4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "681505ba-d1c8-4757-b49b-0a9e65a0faa4",
+			"key": "path",
+			"value": "http://localhost:8000/api/users",
+			"type": "string"
+		}
+	]
+}
